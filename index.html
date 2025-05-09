@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Code/Text Diff Tool</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsdiff/5.1.0/diff.min.js"></script>
+    <link id="hljs-theme" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/xml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/css.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="controls">
+            <button id="compareBtn" title="Compare the two inputs">Compare</button>
+            <button id="swapBtn" title="Swap content of input areas">Swap</button>
+            <button id="clearBtn" title="Clear both inputs and diff output">Clear</button>
+            <label><input type="checkbox" id="autoCompare" checked> Auto</label>
+        </div>
+        
+
+
+
+        <div class="input-areas">
+            <div class="input-group">
+                <div class="input-header">
+                    <label for="originalCode">Original Code/Text</label>
+                    <button class="copy-btn" data-target="originalCode" title="Copy Original Text">Copy</button>
+                </div>
+                <textarea id="originalCode" spellcheck="false" placeholder="Paste or type original content here..."></textarea>
+            </div>
+            <div class="input-group">
+                <div class="input-header">
+                    <label for="correctedCode">Corrected Code/Text</label>
+                    <button class="copy-btn" data-target="correctedCode" title="Copy Corrected Text">Copy</button>
+                </div>
+                <textarea id="correctedCode" spellcheck="false" placeholder="Paste or type corrected content here..."></textarea>
+            </div>
+        </div>
+
+        <div class="diff-output-container">
+            <div class="diff-header">
+                <h2>Diff View</h2>
+                <div id="diffSummary"></div>
+                <!-- No additional features needed -->
+            </div>
+            <div id="diffOutput" class="diff-output">
+            </div>
+        </div>
+
+        <!-- No additional features needed -->
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

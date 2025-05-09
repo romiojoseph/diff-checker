@@ -1,0 +1,484 @@
+/* Default (Dark Theme) */
+:root {
+    --primary-base: #0866ff;
+    --primary-light: #EBEFFF;
+    --primary-border: #C6D2FE;
+    --primary-accent: #0B5EC9;
+    --primary-dark: #01183B;
+    --yellow: #fcd34d;
+    --yellow-highlight: #fff3cd;
+    --red: #dc2626;
+    --green: #16a34a;
+
+	--monochrome-0: #ffffff;
+	--monochrome-1: #f9fafb;
+	--monochrome-2: #f3f4f6;
+	--monochrome-3: #e5e7eb;
+	--monochrome-4: #d1d5db;
+	--monochrome-5: #9ca3af;
+	--monochrome-6: #6b7280;
+	--monochrome-7: #4b5563;
+	--monochrome-8: #374151;
+	--monochrome-9: #1f2937;
+	--monochrome-10: #111827;
+	--monochrome-11: #030712;
+
+    --code:"Geist Mono", monospace;
+    --text:"Geist", sans-serif;
+
+    --font-size-heading1: 36px;
+    --font-size-heading2: 32px;
+    --font-size-heading3: 29px;
+    --font-size-heading4: 26px;
+    --font-size-heading5: 23px;
+    --font-size-heading6: 20px;
+    --font-size-subtitle: 18px;
+    --font-size-body: 16px;
+    --font-size-caption: 14px;
+    --font-size-label: 13px;
+    --font-size-tagline: 11px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--text);
+    font-optical-sizing: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    transition: all .32s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -webkit-user-select: none;
+    user-select: none;
+    line-height: 1.5;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 12px;
+    transition: background-color 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--monochrome-4);
+    border-radius: 10px;
+    transition: background-color 0.2s ease;
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--monochrome-7);
+}
+
+::-webkit-scrollbar-track {
+    background-color: none;
+    border-radius: 10px;
+    transition: background-color 0.2s ease;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    background-color: var(--monochrome-0);
+    color: #333;
+    font-size: 14px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 12px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    width: 100%;
+    gap: 24px;
+}
+
+.controls {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.controls button {
+    padding: 6px 16px;
+    font-size: var(--font-size-caption);
+    font-weight: 600;
+    border: 1px solid var(--monochrome-3);
+    border-radius: 50px;
+    cursor: pointer;
+    background-color: var(--monochrome-1);
+    color: var(--monochrome-11);
+}
+
+.controls button:hover {
+    background-color: var(--monochrome-3);
+}
+
+.copy-btn {
+    padding: 4px 12px;
+    margin: 0 5px;
+    background-color: var(--monochrome-11);
+    color: var(--monochrome-0);
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: var(--font-size-tagline);
+}
+
+.copy-btn:hover {
+    opacity: .8;
+}
+
+.options-bar {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.options-bar label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.input-areas {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 24px;
+    width: 100%;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-self: center;
+    min-height: 200px;
+}
+
+.input-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.input-header label {
+    font-weight: bold;
+}
+
+textarea {
+    width: 100%;
+    height: 200px;
+    padding: 12px;
+    border: 1px solid var(--monochrome-3);
+    border-radius: 12px;
+    outline: none;
+    font-family: var(--code);
+    font-size: var(--font-size-caption);
+    line-height: 1.8;
+    resize: vertical;
+    background-color: var(--monochrome-0);
+    color: var(--monochrome-11);
+}
+
+.diff-output-container {
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-self: center;
+    min-height: 200px;
+    overflow: hidden;
+}
+
+.diff-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 0 5px;
+}
+.diff-header h2 { margin: 0; font-size: 1.2em; }
+#diffSummary { font-size: 0.9em; color: #555; }
+
+#diffOutput {
+    overflow: auto;
+    height: 100%;
+    font-family: var(--code);
+    font-size: var(--font-size-body);
+}
+
+.diff-line {
+    display: flex;
+    border-bottom: 1px dashed #eee;
+}
+/* No special border handling between modified-original and modified-corrected needed if they have distinct full backgrounds */
+.diff-line:last-child { 
+    border-bottom: none;
+}
+
+
+.line-numbers {
+    flex-shrink: 0;
+    padding: 2px;
+    text-align: center;
+    color: var(--monochrome-11);
+    user-select: none;
+    min-width: 10px; 
+    box-sizing: border-box;
+    border-right: 1px solid var(--monochrome-4);
+    font-size: 0.85em;
+}
+.line-numbers span { display: inline-block; width: 30px; font-variant-numeric: tabular-nums; }
+.line-num-orig { color: #c57a7a; } 
+.line-num-new { color: #6a9955; }
+
+.line-content { flex-grow: 1; }
+.line-content pre {
+    margin: 0;
+    padding: 2px 5px; 
+    min-height: 1.2em; 
+    white-space: pre; 
+    overflow-x: visible; 
+    background-color: transparent;
+}
+.line-content pre code { padding: 0 !important; background-color: transparent !important; }
+
+/* === STRICT COLOR DIFF HIGHLIGHTING === */
+
+/* 1. Purely REMOVED Line - RED with STRIKETHROUGH */
+.diff-line.removed .line-content pre { background-color: #FFCCCC !important; } /* RED */
+.diff-line.removed .line-numbers { background-color: #FFCCCC; }
+.diff-line.removed .line-content pre code {
+    text-decoration: line-through !important;
+    color: #000000 !important;
+}
+
+/* 2. Purely ADDED Line - GREEN */
+.diff-line.added .line-content pre { background-color: #CCFFCC !important; } /* GREEN */
+.diff-line.added .line-numbers { background-color: #CCFFCC; }
+
+/* 3. MODIFIED Line PAIR */
+/* 3a. The ORIGINAL part of a modified line - RED with STRIKETHROUGH */
+.diff-line.modified-original .line-content pre {
+    background-color: #FFCCCC !important; /* RED background */
+}
+.diff-line.modified-original .line-content pre code {
+    text-decoration: line-through !important;
+    color: #000000 !important; /* Dark red text for readability on light red */
+    opacity: 0.85; 
+}
+.diff-line.modified-original .line-numbers {
+    background-color: #FFCCCC; /* RED background for line numbers */
+}
+
+/* 3b. The NEW/CORRECTED part of a modified line - YELLOW */
+.diff-line.modified-corrected .line-content pre {
+    background-color: #FFFFCC !important; /* YELLOW background */
+}
+.diff-line.modified-corrected .line-numbers {
+    background-color: #FFFFCC; /* Lighter YELLOW for line numbers */
+}
+
+/* Word/Segment Highlighting WITHIN the YELLOW .modified-corrected line */
+.diff-line.modified-corrected .line-content pre code .word-added {
+    background-color: #2E8B57  !important; /* Green segment ON YELLOW */
+    color: #ffffff !important;           
+    font-weight: 500;
+    border-radius: 6px;
+    padding: 0 6px; 
+}
+.diff-line.modified-corrected .line-content pre code .word-removed {
+    background-color: #FF0000 !important; /* Red segment ON YELLOW */
+    color: #FFFFFF !important;           
+    text-decoration: line-through; 
+    border-radius: 2px;
+    padding: 0 1px; 
+    opacity: 0.7;
+}
+/* === END STRICT COLOR DIFF HIGHLIGHTING === */
+
+/* Text mode specific styles */
+.word-added {
+    background-color: rgba(0, 255, 0, 0.2);
+    font-weight: bold;
+    border-radius: 2px;
+    padding: 0 1px;
+}
+
+.word-removed {
+    text-decoration: line-through;
+    background-color: rgba(255, 0, 0, 0.1);
+    color: #777;
+    border-radius: 2px;
+    padding: 0 1px;
+}
+
+.text-mode-diff {
+    background-color: rgba(240, 240, 240, 0.5);
+    margin-left: 0;
+    padding-left: 10px;
+}
+
+/* Styles for inserted and deleted lines in text mode */
+.inserted-line {
+    background-color: rgba(0, 255, 0, 0.1);
+    display: block;
+    padding: 2px 4px;
+    border-radius: 3px;
+    border-left: 3px solid rgba(0, 200, 0, 0.5);
+}
+
+.deleted-line {
+    text-decoration: line-through;
+    color: #777;
+    background-color: rgba(255, 0, 0, 0.05);
+    display: block;
+    padding: 2px 4px;
+    border-radius: 3px;
+    border-left: 3px solid rgba(200, 0, 0, 0.5);
+}
+
+/* Hide line numbers in text mode */
+.text-mode-no-numbers {
+    display: none;
+}
+
+/* Make text mode lines take full width */
+.text-mode-diff .line-content {
+    width: 100%;
+}
+
+.line-numbers.common-line-theme-bg { background-color: #f6f8fa; } 
+
+@media (max-width: 768px) { 
+    .input-areas {
+        flex-direction: column;
+        max-height: none;
+        min-height: 150px;
+    } 
+    .input-group { min-height: 150px;
+        min-width: 100%;
+        margin-bottom: 10px; } 
+    .diff-output-container {
+        flex-grow: 1;
+        min-width: 100%;
+        margin-top: 40px;
+    } 
+    .options-bar { flex-direction: column; align-items: flex-start; gap: 10px; } 
+    .diff-header { flex-direction: column; align-items: flex-start; gap: 2px; } 
+    .diff-header #copyDiffBtn { margin-left: 0; } 
+}
+textarea.dragover { border-color: #007bff; box-shadow: 0 0 5px rgba(0,123,255,.5); }
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 800px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+}
+
+/* Toggle switch for diff mode */
+.mode-switch {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 24px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
